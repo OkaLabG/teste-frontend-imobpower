@@ -1,10 +1,9 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	background: #EFEFBB;
+	background: linear-gradient(to bottom,#D41938, #DC0A2F);
+	color: white;
+	margin: 0;
+	font-family: "Pokemon Solid";
 }
 
 code {
