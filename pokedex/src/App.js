@@ -2,37 +2,76 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Card from "../src/components/card";
 
-import api from "./services/api";
-
 function App() {
-  const [pokemon, setPokemon] = useState([]);
+  const [urls, setUrls] = useState([]);
+  const [pokemons, setPokemons] = useState([]);
   const [offSet, setOffSet] = useState(0);
 
-  function getData() {
-    api
-      .get(`https://pokeapi.co/api/v2/pokemon?limit=15&offset=${offSet}`)
-      .then((response) => setPokemon(response.data))
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
+  async function getData() {
+    const baseUrl = "https://pokeapi.co/api/v2/";
+
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    try {
+      const response = await fetch(
+        `${baseUrl}pokemon?limit=15&offset=${offSet}`,
+        requestOptions
+      );
+
+      const data = await response.json();
       
+      const newUrls = data.results.map(results => results.url)
+      console.log(newUrls);
+      setUrls(urls => [...urls,newUrls]);
+      console.log(urls);
+    } catch (error) {
+      console.error("ops! ocorreu um erro" + error);
+    }
+  }
+
+  async function getPokemonData() {
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    const arrayPokemon = [];
+
+    for await (let url of urls) {      
+      url = urls.result.url;
+      console.log(url);
+
+      try {
+        const listResponse = await fetch(url, requestOptions);
+
+        const listData = await listResponse.json();
+
+        console.log(listData);
+      } catch (error) {
+        console.error("ops! ocorreu um erro" + error);
+      }
+      // arrayPokemon.push(listData)
+      // console.log(arrayPokemon);
+    }
+
+    //setPokemons(arrayPokemon)
   }
 
   useEffect(() => {
     getData();
-    console.log(pokemon)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [offSet]);
+    getPokemonData();
+  }, []);
 
   return (
     <div className="App">
       <header className="">
         <h1 id="title">Pokedex</h1>
         <ul className="pokedex">
-          {pokemon.map((pokemon) => {
-            return(
-              <Card key={pokemon.id} />
-            ); 
+          {pokemons.map((pokemon) => {
+            return <Card pokemons={pokemons} />;
           })}
         </ul>
       </header>
