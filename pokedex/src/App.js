@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Card from "../src/components/card";
 
-function App() {
-  const [urls, setUrls] = useState([]);
+function App() {  
   const [pokemons, setPokemons] = useState([]);
   const [offSet, setOffSet] = useState(0);
 
@@ -22,17 +21,14 @@ function App() {
       );
 
       const data = await response.json();
-      
-      const newUrls = data.results.map(results => results.url)
-      console.log(newUrls);
-      setUrls(urls => [...urls,newUrls]);
-      console.log(urls);
+
+      return data.results.map((results) => results.url);
     } catch (error) {
       console.error("ops! ocorreu um erro" + error);
     }
   }
 
-  async function getPokemonData() {
+  async function getPokemonData(urls) {
     const requestOptions = {
       method: "GET",
       redirect: "follow",
@@ -40,16 +36,14 @@ function App() {
 
     const arrayPokemon = [];
 
-    for await (let url of urls) {      
-      url = urls.result.url;
-      console.log(url);
-
+    for await (let url of urls) {
       try {
         const listResponse = await fetch(url, requestOptions);
 
         const listData = await listResponse.json();
 
         console.log(listData);
+        arrayPokemon.push(listData);
       } catch (error) {
         console.error("ops! ocorreu um erro" + error);
       }
@@ -57,24 +51,26 @@ function App() {
       // console.log(arrayPokemon);
     }
 
-    //setPokemons(arrayPokemon)
+    setPokemons([...pokemons, ...arrayPokemon]);
   }
 
-  useEffect(() => {
-    getData();
-    getPokemonData();
-  }, []);
+  useEffect(async () => {
+    const urls = await getData();
+    console.log(urls);
+    await getPokemonData(urls);
+  }, [offSet]);
 
   return (
-    <div className="App">
+    <div className="container">
       <header className="">
         <h1 id="title">Pokedex</h1>
+      </header>
         <ul className="pokedex">
           {pokemons.map((pokemon) => {
-            return <Card pokemons={pokemons} />;
+            return <Card pokemon={pokemon} />;
           })}
         </ul>
-      </header>
+      
     </div>
   );
 }

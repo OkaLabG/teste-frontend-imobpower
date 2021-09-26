@@ -1,15 +1,15 @@
-function Card({pokemons}) {
-  const elementTypes = pokemons.types.map(typeInfo => typeInfo.type.name);
+function Card({pokemon}) {
+  const elementTypes = pokemon.types.map(typeInfo => typeInfo.type.name);
   
   return(    
-    <li key={pokemons.name} className={`card ${elementTypes[0]}`}>
+    <li key={pokemon.name} className={`card ${elementTypes[0]}`}>
       <img className="card-image" 
-        alt={pokemons.name}
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemons.id}.png`}
+        alt={pokemon.name}
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
       />
-        <h2 className="card-title">${pokemons.id}. ${pokemons.name}</h2>
+        <h2 className="card-title">{pokemon.id}. {pokemon.name}</h2>
         <p className="card-subtitle">
-          ${elementTypes.join(' | ')}
+          {elementTypes.join(' | ')}
         </p>
     </li>
   )
