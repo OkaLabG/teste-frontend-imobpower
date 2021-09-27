@@ -46,6 +46,12 @@ $ yarn start
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+
+## 📝 Deploy
+
+Deploy on Vercel
+[Pokedex](https://teste-frontend-imobpower.vercel.app)
+
 ---
 
 Made with :heartpulse: by [jeffymesquita](...) 👋
