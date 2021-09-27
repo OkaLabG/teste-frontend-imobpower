@@ -1,12 +1,16 @@
-body {
-	background: #EFEFBB;
+@media only screen and (max-width: 360px) {
+	body {
+		max-width: 360;
+		padding: 0;
+    margin: 0 auto !important;
+	}
+
+}
+
+body {	
 	background: linear-gradient(to bottom,#D41938, #DC0A2F);
 	color: white;
 	margin: 0;
+	padding: 0;
 	font-family: "Pokemon Solid";
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }

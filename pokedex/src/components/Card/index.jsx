@@ -2,7 +2,7 @@ function Card({pokemon}) {
   const elementTypes = pokemon.types.map(typeInfo => typeInfo.type.name);
   
   return(    
-    <li key={pokemon.name} className={`card ${elementTypes[0]}`}>
+    <li className={`card ${elementTypes[0]}`}>
       <img className="card-image" 
         alt={pokemon.name}
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}

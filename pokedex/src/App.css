@@ -8,24 +8,65 @@
   src: url("fonts/Pokemon Solid.ttf");
 }
 
-
-
-
-.container {
-	padding: 15px;
-	margin: auto;
-}
-
-h1 {
+h1#title {
 	text-align: center;
 	font-size: 60px;
 }
 
+@media only screen and (max-width: 360px){
+	h1#title {
+		text-align: center;
+		font-size: 36px;
+		margin: 0 auto;
+	}
+
+	.pokedex {
+		margin: 0 auto
+	}
+	
+}
+
+.container {
+	padding: 15px;
+	margin: auto;
+	align-items: center;
+}
+
+
+
 .pokedex {
+	padding-left: 0;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: space-evenly;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.button {
+	margin: 0 20px;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: 'Pokemon solid';
+	width: 70px;
+	height: 70px;
+	border-radius: 15px;
+	border: 0;		
+	background: linear-gradient(315deg, #D41938, #DC0A2F);
+	box-shadow: 7px 7px 14px #a1132b,
+	-7px -7px 14px #ff1f45;	
+}
+
+.button:hover {
+	color: #d3d3d3;
+	background: linear-gradient(315deg, #bf1732, #e31b3c);
+	box-shadow:  -7px -7px 14px #a1132b,
+  7px 7px 14px #ff1f45;	
 }
 
 .card {

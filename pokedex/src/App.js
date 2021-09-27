@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Card from "../src/components/card";
+import Card from "../src/components/Card";
 
-function App() {  
+function App() {
   const [pokemons, setPokemons] = useState([]);
-  const [offSet, setOffSet] = useState(0);
+  const [offSetPage, setOffSetPage] = useState(0);
 
+  const baseUrl = "https://pokeapi.co/api/v2/";
+  const requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  };
   async function getData() {
-    const baseUrl = "https://pokeapi.co/api/v2/";
-
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
     try {
       const response = await fetch(
-        `${baseUrl}pokemon?limit=15&offset=${offSet}`,
+        `${baseUrl}pokemon?limit=15&offset=${offSetPage}`,
         requestOptions
       );
 
@@ -29,14 +27,9 @@ function App() {
   }
 
   async function getPokemonData(urls) {
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
     const arrayPokemon = [];
 
-    for await (let url of urls) {
+    for (let url of urls) {
       try {
         const listResponse = await fetch(url, requestOptions);
 
@@ -47,31 +40,54 @@ function App() {
       } catch (error) {
         console.error("ops! ocorreu um erro" + error);
       }
-      // arrayPokemon.push(listData)
-      // console.log(arrayPokemon);
     }
 
     setPokemons([...pokemons, ...arrayPokemon]);
   }
 
-  useEffect(async () => {
-    const urls = await getData();
+  async function loadData(offSetPage) {
+    const urls = await getData(offSetPage);
     console.log(urls);
     await getPokemonData(urls);
-  }, [offSet]);
+  }
+
+  function handleNextPage() {
+    setPokemons([]);
+    setOffSetPage(offSetPage + 15);
+    console.log(offSetPage);
+  }
+
+  function handlePreviousPage() {
+    if (offSetPage !== 0) {
+      setPokemons([]);
+      setOffSetPage(offSetPage - 15);
+      console.log(offSetPage);
+    }
+  }
+
+  useEffect(() => {
+    loadData();
+  }, [offSetPage]);
 
   return (
-    <div className="container">
+    <main className="container">
       <header className="">
         <h1 id="title">Pokedex</h1>
+        <nav>
+          <button className="button" onClick={handlePreviousPage}>
+            Previous
+          </button>
+          <button className="button" onClick={handleNextPage}>
+            Next
+          </button>
+        </nav>
       </header>
-        <ul className="pokedex">
-          {pokemons.map((pokemon) => {
-            return <Card pokemon={pokemon} />;
-          })}
-        </ul>
-      
-    </div>
+      <ul className="pokedex">
+        {pokemons.map((pokemon) => {
+          return <Card key={pokemon.name} pokemon={pokemon} />;
+        })}
+      </ul>
+    </main>
   );
 }
 
