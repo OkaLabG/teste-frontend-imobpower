@@ -1,9 +1,9 @@
 <p align="center">
-  <img alt="Pokedex" src=".github/pokedex.png" width="160px">
+  <img alt="Pokedex" src=".github/pokemon-logo.png" width="160px">
 </p>
 
 <p align="center">
-  <img  src=".github/pokemon-logo.png" alt="License">
+  <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=991f36&labelColor=0D133D" alt="License">
 
   <img src="https://img.shields.io/github/forks/jeffymesquita/teste-frontend-imobpower?label=forks&message=MIT&color=991f36&labelColor=0D133D" alt="Forks">
 
@@ -11,7 +11,7 @@
 </p>
 
 <h1 align="center">
-    <img alt="pokedex" title="Pokedex" src=".github/cover.png" />
+    <img alt="pokedex" title="Pokedex" src=".github/pokedex.png" />
 </h1>
 
 <br>
