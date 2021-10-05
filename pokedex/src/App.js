@@ -88,6 +88,14 @@ function App() {
           return <Card key={pokemon.name} pokemon={pokemon} />;
         })}
       </ul>
+      <footer>
+          <button className="button" onClick={handlePreviousPage}>
+            Previous
+          </button>
+          <button className="button" onClick={handleNextPage}>
+            Next
+          </button>
+        </footer>
     </main>
   );
 }

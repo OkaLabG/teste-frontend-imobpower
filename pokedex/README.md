@@ -44,12 +44,9 @@ $ yarn start
 
 ## 📝 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. Deploy
 
-
-## 📝 Deploy
-
-Deploy on Vercel
+## :globe_with_meridians: Deploy on Vercel
 [Pokedex](https://teste-frontend-imobpower.vercel.app)
 
 ---
