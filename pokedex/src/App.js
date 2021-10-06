@@ -54,7 +54,7 @@ function App() {
     console.log(urls);
     await getPokemonData(urls);
     setLoading(false);
-    window.navigator.vibrate([200]);
+    window.navigator.vibrate([350]);
   }
 
   function handleNextPage() {
