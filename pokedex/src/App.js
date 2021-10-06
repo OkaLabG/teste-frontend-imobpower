@@ -53,7 +53,7 @@ function App() {
     const urls = await getData(offSetPage);
     console.log(urls);
     await getPokemonData(urls);
-    setLoading(false); 
+    setLoading(false);
     window.navigator.vibrate([200]);
   }
 
@@ -74,9 +74,9 @@ function App() {
   }
 
   useEffect(() => {
-    loadData();           
+    loadData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [offSetPage, loading]);
+  }, [offSetPage]);
 
   return (
     <main className="container">
@@ -91,15 +91,13 @@ function App() {
           </button>
         </nav>
       </header>
-      {loading ? (
-        <Loader />
-      ) : (
-        <ul className="pokedex">
-          {pokemons.map((pokemon) => {
-            return <Card key={pokemon.name} pokemon={pokemon} />;
-          })}
-        </ul>
-      )}
+      {loading ? <Loader /> : <></>}
+
+      <ul className="pokedex">
+        {pokemons.map((pokemon) => {
+          return <Card key={pokemon.name} pokemon={pokemon} />;
+        })}
+      </ul>
 
       {!loading ? (
         <footer>
@@ -113,7 +111,6 @@ function App() {
       ) : (
         <></>
       )}
-      
     </main>
   );
 }
