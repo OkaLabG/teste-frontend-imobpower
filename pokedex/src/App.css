@@ -278,9 +278,11 @@ nav, footer {
 }
 
 .card-image {
-	height: 135px;	
+	height: 125px;	
+	width: 100px;
 	position: absolute;
-	left: 55%;
+	top: 11%;
+	left: 62%;
 	z-index: 1;
 }
 
