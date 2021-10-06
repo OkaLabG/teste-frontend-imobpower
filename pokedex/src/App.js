@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
+
 import "./App.css";
+
 import Card from "../src/components/Card";
+import Loader from "../src/components/Loader";
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
   const [offSetPage, setOffSetPage] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const baseUrl = "https://pokeapi.co/api/v2/";
   const requestOptions = {
@@ -49,26 +53,30 @@ function App() {
     const urls = await getData(offSetPage);
     console.log(urls);
     await getPokemonData(urls);
+    setLoading(false); 
+    window.navigator.vibrate([200]);
   }
 
   function handleNextPage() {
+    setLoading(true);
     setPokemons([]);
     setOffSetPage(offSetPage + 15);
-    console.log(offSetPage);
+    //console.log(offSetPage);
   }
 
   function handlePreviousPage() {
     if (offSetPage !== 0) {
+      setLoading(true);
       setPokemons([]);
       setOffSetPage(offSetPage - 15);
-      console.log(offSetPage);
+      //console.log(offSetPage);
     }
   }
 
   useEffect(() => {
-    loadData();
+    loadData();           
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [offSetPage]);
+  }, [offSetPage, loading]);
 
   return (
     <main className="container">
@@ -83,12 +91,18 @@ function App() {
           </button>
         </nav>
       </header>
-      <ul className="pokedex">
-        {pokemons.map((pokemon) => {
-          return <Card key={pokemon.name} pokemon={pokemon} />;
-        })}
-      </ul>
-      <footer>
+      {loading ? (
+        <Loader />
+      ) : (
+        <ul className="pokedex">
+          {pokemons.map((pokemon) => {
+            return <Card key={pokemon.name} pokemon={pokemon} />;
+          })}
+        </ul>
+      )}
+
+      {!loading ? (
+        <footer>
           <button className="button" onClick={handlePreviousPage}>
             Previous
           </button>
@@ -96,6 +110,10 @@ function App() {
             Next
           </button>
         </footer>
+      ) : (
+        <></>
+      )}
+      
     </main>
   );
 }
