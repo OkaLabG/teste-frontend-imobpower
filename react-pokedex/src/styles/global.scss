@@ -1,0 +1,24 @@
+:root {
+    --rock: #945151;
+    --ghost: #f7f7f7;
+    --electric: #ffffa1;
+    --bug: #f6d6a7;
+    --poison: #e0a7f6;
+    --normal: #f4f4f4;
+    --fairy: rgba(255, 192, 203, 0.863);
+    --fire: #fbe3df;
+    --grass: #e2f9e1;
+    --water: #e0f1fd;
+}
+
+body {
+    background-color: #f3e66f;
+}
+* {
+    box-sizing: border-box;
+    font-family: "Press Start 2P";
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}

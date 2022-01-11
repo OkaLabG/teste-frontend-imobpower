@@ -1,0 +1,83 @@
+.container-card {
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+.container-config {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12pt;
+    font-weight: 800;
+    .card-name {
+        margin: 10px 0 7px;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+    }
+    .card-id {
+        margin-right: 10px;
+    }
+}
+
+.card-type {
+    display: flex;
+    font-size: 10pt;
+    p {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        font-size: 0.8em;
+        padding: 5px 10px;
+        margin: 5px;
+        text-transform: capitalize;
+    }
+}
+.card-img {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    margin: auto;
+    img {
+        margin-top: 10px;
+        max-width: 90%;
+    }
+}
+.grass {
+    background-color: var(--grass);
+}
+.ghost {
+    background-color: var(--ghost);
+}
+.electric {
+    background-color: var(--electric);
+}
+.bug {
+    background-color: var(--bug);
+}
+.poison {
+    background-color: var(--poison);
+}
+.normal {
+    background-color: var(--normal);
+}
+.fairy {
+    background-color: var(--fairy);
+}
+.fire {
+    background-color: var(--fire);
+}
+.water {
+    background-color: var(--water);
+}
+.rock {
+    background-color: var(--rock);
+}
