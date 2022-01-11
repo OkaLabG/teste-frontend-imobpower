@@ -13,7 +13,7 @@ function Card({pokemon}) {
     <li className={`card ${elementTypes[0]}`}>
       <img className="card-image" 
         alt={pokemon.name}
-        ele
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
       />
         <h2 className="card-title">{pokemon.id}. {pokemon.name}</h2>
         <p className="card-subtitle">          
