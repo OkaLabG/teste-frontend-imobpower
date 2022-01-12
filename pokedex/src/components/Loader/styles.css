@@ -1,0 +1,55 @@
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;  
+}
+
+.spinner {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #00000022;
+  border-left-color: #000000;
+  border-top-color: #000000;  
+  animation: spin 1s linear infinite;
+}
+
+img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.text {
+  font-family: "8-bit-pusab";
+  font-size: 10px;
+}
+
+.point {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.type-animation {
+  animation: typing 4s steps(10) 1s normal both;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 35px;
+  }
+}

@@ -1,0 +1,317 @@
+@font-face {
+  font-family: "Pokemon Hollow";
+  src: url("fonts/Pokemon Hollow.ttf");
+}
+
+@font-face {
+  font-family: "Pokemon Solid";
+  src: url("fonts/Pokemon Solid.ttf");
+}
+
+@font-face {
+  font-family: "8-bit-pusab";
+  src: url("fonts/8-bit-pusab.ttf");
+}
+
+
+h1#title {
+	text-align: center;
+	font-size: 60px;
+}
+
+@media only screen and (max-width: 360px){
+	h1#title {
+		text-align: center;
+		font-size: 36px;
+		margin: 0 auto;
+	}
+
+	.pokedex {
+		margin: 0 auto
+	}
+	
+}
+
+.container {
+	padding: 15px;
+	margin: auto;
+	align-items: center;
+}
+
+
+
+.pokedex {
+	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+nav, footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.button {
+	margin: 0 20px;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: 'Pokemon solid';
+	width: 70px;
+	height: 70px;
+	border-radius: 15px;
+	border: 0;		
+	background: linear-gradient(315deg, #D41938, #DC0A2F);
+	box-shadow: 7px 7px 14px #a1132b,
+	-7px -7px 14px #ff1f45;	
+}
+
+.button:hover {
+	color: #d3d3d3;
+	background: linear-gradient(315deg, #bf1732, #e31b3c);
+	box-shadow:  -7px -7px 14px #a1132b,
+  7px 7px 14px #ff1f45;	
+}
+
+.card {
+	height: 135px;
+	width: 300px;
+	list-style: none;
+	padding: 5px;
+	margin: 20px 15px;
+	color: #222;
+	text-align: left;
+	border-radius: 10px;	
+	position: relative;
+	box-shadow: 7px 4px 3px -1px rgba(0,0,0,0.65) ;
+}
+
+
+
+.steel {
+	background-color: #f4f4f4;
+}
+
+.fire {
+	background-color: #FFA756;
+}
+
+.grass {
+	background-color: #8BBE8A;
+}
+
+.electric {
+	background-color: #F2CB55;
+}
+
+.water {
+	background-color: #58ABF6;
+}
+
+.ice {
+	background-color: #91D8DF;
+}
+
+.ground {
+	background-color: #F78551;
+}
+
+.rock {
+	background-color: #D4C294;
+}
+
+.fairy {
+	background-color: #EBA8C3;
+}
+
+.poison {
+	background-color: #9F6E97;
+}
+
+.bug {
+	background-color: #8BD674;
+}
+
+.dragon {
+	background-color: #7383B9;
+}
+
+.psychic {
+	background-color: #FF6568;
+}
+
+.flying {
+	background-color: #F5F5F5;
+}
+
+.fighting {
+	background-color: #EB4971;
+}
+
+.normal {
+	background-color: #B5B9C4;
+}
+
+.ghost {
+	background-color: #FEFEFE44;
+}
+
+.dark {
+	background-color: #6F6E78;
+}
+
+.card:hover {
+	animation: bounce 0.9s linear;
+	box-shadow:9px 6px 19px -3px rgba(0,0,0,0.82);	
+}
+
+.card-title {	
+	text-transform: capitalize;
+	margin-bottom: 0px;
+	font-size: 24px;
+	font-weight: normal;
+	position: absolute;
+	left: 3%;	
+	bottom: 67%;
+}
+
+.card-subtitle {
+	font-family: "8-bit-pusab";
+	font-size: 10px;	
+	color: #FAFAFA;
+	font-weight: normal;	
+	position: absolute;
+	left: 3%;
+	top: 73%;	
+}
+
+.element{
+	border-radius: 8px;
+	padding: 3px 12px;	
+	border: 1px solid #00000044;
+}
+
+.elementOne{
+	border-radius: 8px 0 0 8px;
+	padding: 3px 12px;	
+	border: 1px solid #00000044;
+}
+
+.elementTwo {
+	border-radius: 0 8px 8px 0;
+	padding: 3px 12px;	
+	border: 1px solid #00000044;
+}
+
+.span-steel {
+	background-color: #417D9A;
+}
+
+.span-fire {
+	background-color: #FD7D24;
+}
+
+.span-grass {
+	background-color: #62B957;
+}
+
+.span-electric {
+	background-color: #EED535;
+}
+
+.span-water {
+	background-color: #4A90DA;
+}
+
+.span-ice {
+	background-color: #61CEC0
+}
+
+.span-ground {
+	background-color: #DD7748;
+}
+
+.span-rock {
+	background-color: #BAAB82;
+}
+
+.span-fairy {
+	background-color: #ED6EC7;
+}
+
+.span-poison {
+	background-color: #A552CC;
+}
+
+.span-bug {
+	background-color: #8CB230;
+}
+
+.span-dragon {
+	background-color: #0F6AC0;
+}
+
+.span-psychic {
+	background-color: #EA5D60;
+}
+
+.span-flying {
+	background-color: #748FC9EE;
+}
+
+.span-fighting {
+	background-color: #D04164;
+}
+
+.span-normal {
+	background-color: #9DA0AA;
+}
+
+.span-ghost {
+	background-color: #556AAE;
+}
+
+.span-dark {
+	background-color: #58575F;
+}
+
+.card-image {
+	height: 125px;	
+	width: 100px;
+	position: absolute;
+	top: 11%;
+	left: 62%;
+	z-index: 1;
+}
+
+.card::after {
+	content: "";
+  display: block;
+  width: 40%;
+  height: 55%;
+  border-radius: 100%;
+  background-color: #fff;
+  opacity: .85;
+  position: absolute;
+  top: 35%;
+  left: 57%;
+}
+
+@keyframes bounce {
+	20% {
+			transform: translateY(-10px);
+	}
+	40% {
+			transform: translateY(0px);
+	}
+
+	80% {
+			transform: translateY(-4px);
+	}
+	100% {
+			transform: translateY(0);
+	}
+}
+
