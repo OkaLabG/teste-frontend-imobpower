@@ -1,47 +1,54 @@
-# Teste para candidatos à vaga de desenvolvedor Front-end
+## What is inside?
 
-### Instruções
+This project uses lot of stuff as:
 
-1. Desenvolver uma pokedex utilizando uma API aberta;
+- [TypeScript](https://www.typescriptlang.org/)
+- [NextJS](https://nextjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [Eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Husky](https://github.com/typicode/husky)
+- [Plop](https://plopjs.com)
 
-2. Nós queremos avaliar o seu nível de conhecimento em design responsivo (Responsive Web Design) usando HTML5 e CSS3. Caso queira, utilize pré-processadores (Less, Stylus ou SASS, esse último é o que mais usamos :D);
+## Getting Started
 
-3. Queremos ver você fazendo os breakpoints e as modificações dependendo do device;
+First, install dependences:
 
-4. Não tenha pressa! Iremos avaliar a qualidade do seu código, mesmo incompleto e principalmente a sua semântica;
+```bash
+npm install
+# or
+yarn
+```
 
-### O que esperamos:
+Run the development server:
 
-1. Utilizar React;
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-2. Utilizar ECMAScript 6+;
- 
-3. Criar um passo a passo de como rodar sua aplicação;
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-4. Realizar paginação na listagem de pokemon;
+## Commands
 
-### Plus:
+- `dev`: runs your application on `localhost:3000`
+- `build`: creates the production build version
+- `start`: starts a simple server with the build production code
+- `lint`: runs the linter in all components and pages
+- `generate`: create component templates
 
-1. A página ser responsiva;
+## Learn More
 
-2. Uso de pré-processador css;
+To learn more about Next.js, take a look at the following resources:
 
-3. Utilizar TypeScript;
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-4. Desenvolver o teste com NEXT.js;
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-5. Utilização de Docker;
+## Deploy on Vercel
 
-### Material 
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-* API pokedex: https://documenter.getpostman.com/view/10670805/SzS2xToN
-
-### Atenção
-
-* É permitido usar qualquer editor de código e consultar a internet.
-
-Ao terminar o teste, solicite um pull request. 
-
-Em caso de dúvidas, envie e-mail para reinaldo@imobpower.com.
-
-**Boa sorte!**
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
