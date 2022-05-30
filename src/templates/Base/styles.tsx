@@ -12,7 +12,7 @@ export const Header = styled(Container)`
   ${({ theme }) => css`
     padding: ${theme.spacings.small};
     display: none;
-    height: 16rem;
+    height: 14rem;
     background: url('/img/header-background.png') no-repeat left fixed;
 
     ${media.greaterThan('medium')`

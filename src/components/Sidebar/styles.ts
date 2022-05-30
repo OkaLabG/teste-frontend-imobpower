@@ -14,9 +14,49 @@ export const Item = styled.a`
     &:hover {
       transform: translateX(1rem);
     }
+  `}
+`
+
+export const ShowMoreWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: ${theme.spacings.xxsmall};
+
+    ${Item} {
+      width: max-content;
+
+      &:hover {
+        transform: none;
+      }
+    }
+  `}
+`
+
+export const Counter = styled.span`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.secondary};
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.small};
+    border-radius: ${theme.border.radius};
+    font-weight: ${theme.font.bold};
+  `}
+`
+
+type ButtonProps = {
+  isNull?: boolean
+  disabled?: boolean
+}
+
+export const Button = styled.button<ButtonProps>`
+  ${({ theme, isNull, disabled }) => css`
+    cursor: ${disabled ? 'not-allowed' : 'pointer'};
+    background: none;
+    border: none;
+    outline: none;
 
     & > svg {
-      color: ${theme.colors.primary};
+      color: ${isNull ? theme.colors.gray : theme.colors.primary};
     }
   `}
 `
@@ -157,7 +197,7 @@ export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, isOpen }) => css`
     ${HeadingStyles.Wrapper} {
       ${({ theme }) => css`
-        margin-bottom: ${theme.spacings.medium};
+        margin-bottom: ${theme.spacings.xsmall};
       `}
     }
 

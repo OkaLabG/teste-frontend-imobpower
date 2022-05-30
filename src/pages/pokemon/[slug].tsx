@@ -34,9 +34,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const pokemon = { name, abilities, sprites, types, height, weight }
 
-  const {
-    data: { results }
-  } = await axios.get(`${baseUrl}`)
+  const { data: results } = await axios.get(
+    'https://pokeapi.co/api/v2/pokemon?limit=20'
+  )
 
   const sidebarItems = results
 
