@@ -1,0 +1,21 @@
+{
+  "name": "Imobpower frontend test",
+  "short_name": "Imobpower",
+  "icons": [
+    {
+      "src": "img/favicon.png",
+      "type": "image/ico",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/favicon.png",
+      "type": "image/ico",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#030517",
+  "description": "Teste para vaga frontend para a empresa Imobpower",
+  "display": "fullscreen",
+  "start_url": "/",
+  "theme_color": "#030517"
+}
