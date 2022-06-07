@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ItemsProps } from 'components/Sidebar'
+import { SidebarItem } from 'hooks/use-sidebar'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import Pokemon, { PokemonTemplateProps } from 'templates/Pokemon'
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   } = await axios.get(`${baseUrl}`)
   const pokemonNames = results
 
-  const paths = pokemonNames.map(({ name }: ItemsProps) => ({
+  const paths = pokemonNames.map(({ name }: SidebarItem) => ({
     params: { slug: name }
   }))
 
@@ -34,16 +34,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const pokemon = { name, abilities, sprites, types, height, weight }
 
-  const { data: results } = await axios.get(
-    'https://pokeapi.co/api/v2/pokemon?limit=20'
-  )
-
-  const sidebarItems = results
-
   return {
     props: {
-      pokemon,
-      sidebarItems
+      pokemon
     }
   }
 }

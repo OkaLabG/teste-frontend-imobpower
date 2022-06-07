@@ -1,61 +1,32 @@
 import {
+  Close,
+  FilterList,
   KeyboardArrowLeft,
   KeyboardArrowRight
-} from '@styled-icons/material-outlined/'
-import { Close } from '@styled-icons/material-outlined/Close'
-import { FilterList } from '@styled-icons/material-outlined/FilterList'
-import axios from 'axios'
+} from '@styled-icons/material-outlined'
 import Heading from 'components/Heading'
+import { useSidebar } from 'hooks/use-sidebar'
 import Link from 'next/link'
 import { upperCaseFirstLetter } from 'utils'
-
-import { useState } from 'react'
 import * as S from './styles'
 
-export type ItemsProps = {
-  name: string
-  url: string
-}
-
-export type SidebarProps = {
-  items: {
-    count: number
-    previous: string
-    next: string
-    results: ItemsProps[]
-  }
-}
-
-const Sidebar = ({ items }: SidebarProps) => {
-  const initialPerPage =
-    items.previous?.split('limit=')[1] || items.next?.split('limit=')[1]
-  const [isOpen, setIsOpen] = useState(false)
-  const [values, setValues] = useState(items)
-  const [currentPage, setCurrentPage] = useState(1)
-  const [perPage] = useState(initialPerPage)
-
-  const totalPages = Math.ceil(items.count / Number(perPage))
-
-  const onPrevious = async () => {
-    const { data } = await axios.get(values.previous)
-
-    setCurrentPage(currentPage - 1)
-    setValues(data)
-  }
-
-  const onNext = async () => {
-    const { data } = await axios.get(values.next)
-
-    setCurrentPage(currentPage + 1)
-    setValues(data)
-  }
+const Sidebar = () => {
+  const {
+    values,
+    currentPage,
+    totalPages,
+    isOpen,
+    onNext,
+    onPrevious,
+    handleToggleMenu
+  } = useSidebar()
 
   return (
     <S.Wrapper isOpen={isOpen}>
       <S.Overlay aria-hidden={isOpen} />
       <S.IconWrapper>
-        <FilterList aria-label="open filters" onClick={() => setIsOpen(true)} />
-        <Close aria-label="close filters" onClick={() => setIsOpen(false)} />
+        <FilterList aria-label="open filters" onClick={handleToggleMenu} />
+        <Close aria-label="close filters" onClick={handleToggleMenu} />
       </S.IconWrapper>
       <Heading lineLeft size="huge">
         Pokémon
@@ -88,7 +59,7 @@ const Sidebar = ({ items }: SidebarProps) => {
         {values.results?.map((item) => (
           <S.Items key={item.name}>
             <Link href={`/pokemon/${item.name}`} passHref>
-              <S.Item onClick={() => setIsOpen(false)}>
+              <S.Item onClick={handleToggleMenu}>
                 {upperCaseFirstLetter(item.name)}
               </S.Item>
             </Link>

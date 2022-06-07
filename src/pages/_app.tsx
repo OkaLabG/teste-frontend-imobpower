@@ -1,3 +1,4 @@
+import { SidebarProvider } from 'hooks/use-sidebar'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
@@ -18,7 +19,9 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="description" content="A frontend test to imobpower" />
       </Head>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <SidebarProvider>
+        <Component {...pageProps} />
+      </SidebarProvider>
     </ThemeProvider>
   )
 }

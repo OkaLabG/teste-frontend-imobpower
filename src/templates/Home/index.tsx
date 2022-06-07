@@ -1,13 +1,8 @@
 import Empty from 'components/Empty'
-import { SidebarProps } from 'components/Sidebar'
 import Base from 'templates/Base'
 
-export type HomeTemplateProps = {
-  sidebarItems: SidebarProps['items']
-}
-
-const Home = ({ sidebarItems }: HomeTemplateProps) => (
-  <Base sidebarItems={sidebarItems}>
+const Home = () => (
+  <Base>
     <Empty
       title=":)"
       description="Selecione um pokemon para ver suas informações"

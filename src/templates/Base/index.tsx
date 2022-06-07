@@ -1,4 +1,4 @@
-import Sidebar, { SidebarProps } from 'components/Sidebar'
+import Sidebar from 'components/Sidebar'
 import Image from 'next/image'
 import logo from '../../../public/img/logo.png'
 
@@ -6,10 +6,9 @@ import * as S from './styles'
 
 type BaseTemplateProps = {
   children: React.ReactNode
-  sidebarItems: SidebarProps['items']
 }
 
-const Base = ({ children, sidebarItems }: BaseTemplateProps) => {
+const Base = ({ children }: BaseTemplateProps) => {
   return (
     <S.Wrapper>
       <S.Header>
@@ -17,7 +16,7 @@ const Base = ({ children, sidebarItems }: BaseTemplateProps) => {
       </S.Header>
 
       <S.Main>
-        <Sidebar items={sidebarItems} />
+        <Sidebar />
 
         <S.Content>{children}</S.Content>
       </S.Main>

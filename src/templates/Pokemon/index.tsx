@@ -1,6 +1,5 @@
 import { Grid } from 'components/Grid'
 import Heading from 'components/Heading'
-import { SidebarProps } from 'components/Sidebar'
 import Image from 'next/image'
 import Base from 'templates/Base'
 import { upperCaseFirstLetter } from 'utils'
@@ -36,14 +35,13 @@ type PokemonProps = {
 
 export type PokemonTemplateProps = {
   pokemon: PokemonProps
-  sidebarItems: SidebarProps['items']
 }
 
-const Pokemon = ({ pokemon, sidebarItems }: PokemonTemplateProps) => {
+const Pokemon = ({ pokemon }: PokemonTemplateProps) => {
   const imageUrl = pokemon.sprites.other['official-artwork'].front_default
 
   return (
-    <Base sidebarItems={sidebarItems}>
+    <Base>
       <S.SectionWrapper>
         <Heading lineLeft>{upperCaseFirstLetter(pokemon.name)}</Heading>
         <S.Section>
