@@ -1,47 +1,41 @@
-# Teste para candidatos à vaga de desenvolvedor Front-end
+<h1 align=center>POKEDEX</h1>
 
-### Instruções
+## :ballot_box_with_check: Funcionalidades
+- Página de Início e Pokedex.
+- Inicio: breve explicação de significado de "Pokemon"
+- Pokedex: Listagem de pokemons com paginação e possibilidade de acessar um pokemon individualmente, exibindo seus detalhes.
+<br />
 
-1. Desenvolver uma pokedex utilizando uma API aberta;
+![image](https://user-images.githubusercontent.com/53945496/176308145-a050a14d-60c2-45e5-bcd1-6d0af90fc54e.png)
+![image](https://user-images.githubusercontent.com/53945496/176308481-bd42ba1e-4ce7-46b5-97f2-2ec162e67cf9.png)
+![image](https://user-images.githubusercontent.com/53945496/176308522-88ee01b0-656e-485a-9593-ec6835c37a70.png)
+![image](https://user-images.githubusercontent.com/53945496/176308633-80143ad1-2467-440d-a16f-9f6f0043b110.png)
 
-2. Nós queremos avaliar o seu nível de conhecimento em design responsivo (Responsive Web Design) usando HTML5 e CSS3. Caso queira, utilize pré-processadores (Less, Stylus ou SASS, esse último é o que mais usamos :D);
 
-3. Queremos ver você fazendo os breakpoints e as modificações dependendo do device;
+## :arrow_forward: Como rodar a aplicação
+<p>1. Clone o projeto </p>
 
-4. Não tenha pressa! Iremos avaliar a qualidade do seu código, mesmo incompleto e principalmente a sua semântica;
+```
+git clone https://github.com/lucasrosa00/teste-frontend-imobpower.git
 
-### O que esperamos:
+```
 
-1. Utilizar React;
+<p>2. Rode npm install.</p>
 
-2. Utilizar ECMAScript 6+;
- 
-3. Criar um passo a passo de como rodar sua aplicação;
+```
+npm install 
 
-4. Realizar paginação na listagem de pokemon;
+```
 
-### Plus:
+<p>3. Inicie o servidor.</p>
 
-1. A página ser responsiva;
+```
+npm run dev
+```
+![image](https://user-images.githubusercontent.com/53945496/176314596-424393f1-32d1-48e0-befa-2e1ac1f496bb.png)
 
-2. Uso de pré-processador css;
+<p>4. Navegue para o localhost do projeto.</p>
 
-3. Utilizar TypeScript;
+- http://localhost:3000/
 
-4. Desenvolver o teste com NEXT.js;
-
-5. Utilização de Docker;
-
-### Material 
-
-* API pokedex: https://documenter.getpostman.com/view/10670805/SzS2xToN
-
-### Atenção
-
-* É permitido usar qualquer editor de código e consultar a internet.
-
-Ao terminar o teste, solicite um pull request. 
-
-Em caso de dúvidas, envie e-mail para reinaldo@imobpower.com.
-
-**Boa sorte!**
+<br />

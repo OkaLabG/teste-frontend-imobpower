@@ -1,0 +1,38 @@
+.header {
+    background-color: #ff857A;
+    display: inline-block;
+    width: 100%;
+}
+
+.banner {
+    height: 100%;
+    margin-left: 30%;
+    padding-top: 2%;
+    width: 40%;
+    cursor: pointer;
+}
+
+.menu {
+    margin: 2% 0;
+    justify-content: center;
+    display: flex;
+}
+
+.menuItem {
+    margin: 0 1%;
+    text-align: center;
+}
+
+.menuItem a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+.menuItem a:hover {
+    text-decoration: underline;
+    color: rgb(226, 224, 224);
+    font-size: 2.7rem;
+    font-weight: bold;
+}

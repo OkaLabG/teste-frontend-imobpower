@@ -1,0 +1,34 @@
+.page {
+    background-color: #f2f2f2;
+    min-height: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background-color:#bde0fe;
+    min-height: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    height: 250px;
+    background-color: #bde0fe;
+}
+
+.pokemons {
+    display: flex;
+    align-content: flex-start;
+    align-self: center;
+}
+
+.filtros {
+    display: flex;
+    align-content: flex-start;
+    align-self: center;
+    background-color: #bde0fe;
+    padding: 1rem 0;
+}
